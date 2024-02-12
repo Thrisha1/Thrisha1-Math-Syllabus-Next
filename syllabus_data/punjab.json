@@ -1,0 +1,45 @@
+{
+  "title": "PACE (SOE Punjab)",
+  "topics": [
+    {
+      "id": 1,
+      "topic_title": "Calculus"
+    },
+    {
+      "id": 2,
+      "topic_title": "Differential Equations"
+    },
+    {
+      "id": 3,
+      "topic_title": "Linear Algebra"
+    },
+    {
+      "id": 4,
+      "topic_title": "Probability and Statistics"
+    },
+    {
+      "id": 5,
+      "topic_title": "Discrete Mathematics"
+    },
+    {
+      "id": 6,
+      "topic_title": "Numerical Analysis"
+    },
+    {
+      "id": 7,
+      "topic_title": "Complex Analysis"
+    },
+    {
+      "id": 8,
+      "topic_title": "Vector Calculus"
+    },
+    {
+      "id": 9,
+      "topic_title": "Transforms and Fourier Series"
+    },
+    {
+      "id": 10,
+      "topic_title": "Graph Theory"
+    }
+  ]
+}

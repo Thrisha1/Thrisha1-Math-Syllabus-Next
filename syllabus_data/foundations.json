@@ -1,0 +1,33 @@
+{
+  "title": "Math Foundations",
+  "topics": [
+    {
+      "id": 1,
+      "topic_title": "Number Systems"
+    },
+    {
+      "id": 2,
+      "topic_title": "Basic Arithmetic"
+    },
+    {
+      "id": 3,
+      "topic_title": "Basic Algebra"
+    },
+    {
+      "id": 4,
+      "topic_title": "Basic Geometry"
+    },
+    {
+      "id": 5,
+      "topic_title": "Basic Trigonometry"
+    },
+    {
+      "id": 6,
+      "topic_title": "Measurement and Units"
+    },
+    {
+      "id": 7,
+      "topic_title": "Data Analysis and Interpretation"
+    }
+  ]
+}
