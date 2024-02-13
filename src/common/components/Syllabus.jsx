@@ -6,6 +6,7 @@ export default async function Syllabus () {
 
 
     const {ncert,maharashtra,punjab,foundations} = await getData();
+
     return (
         <div className="m-4 bg-gray-100 p-4">
             <Accordion
