@@ -12,7 +12,7 @@ const Navbar = () => {
 
     // search bar component
     const SearchBar = () => (
-        <div className={`relative ${isSearchExpanded ? 'block' : 'hidden'} md:block`}>
+        <div className={`relative ${isSearchExpanded ? 'block' : 'hidden'} lg:flex md:items-center  `}>
             <input
                 type="text"
                 placeholder="Search"
@@ -34,7 +34,7 @@ const Navbar = () => {
 
     // mobile search icon
     const MobileSearchIcon = () => (
-        <div className={`flex items-center space-x-4 md:hidden ${isSearchExpanded ? 'hidden' : 'flex'}`}>
+        <div className={`flex items-center space-x-4 lg:hidden ${isSearchExpanded ? 'hidden' : 'flex'}`}>
             <button onClick={toggleSearch}
                     className="p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
                 <span className="sr-only">Search</span>
@@ -53,16 +53,16 @@ const Navbar = () => {
     return (
         <nav className="bg-gray-200 border-gray-200">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <div className="flex md:hidden items-center space-x-4 text-4xl">
+                <div className="flex sm:hidden items-center space-x-4 text-4xl">
                     Logo. Here
                 </div>
 
+                <div className="hidden sm:flex items-center space-x-4 text-4xl">
+                    Logo. Here
+                </div>
                 <div className="flex flex-end ">
                     <MobileSearchIcon/>
                     <SearchBar/>
-                </div>
-                <div className="hidden md:flex items-center space-x-4 text-4xl">
-                    Logo. Here
                 </div>
                 {/* mobile nav icon */}
                 <button data-collapse-toggle="navbar-default" type="button"
