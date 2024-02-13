@@ -3,14 +3,18 @@ import React, { useState } from 'react';
 import Image from "next/image";
 
 const Accordion = ({ title, content }) => {
+    // state to check if the accordion is open or not
     const [isOpen, setIsOpen] = useState(false);
 
+    // function to toggle the accordion
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
     };
 
+
     return (
         <div className=" border-gray-200 ">
+            {/* button toggle accordition */}
             <button
                 className={`flex items-center justify-between w-full p-5  font-medium rtl:text-right text-black text-lg gap-y-3 ${isOpen ? '' : ''}`}
                 onClick={toggleAccordion}
@@ -31,6 +35,7 @@ const Accordion = ({ title, content }) => {
             </button>
             {/*div for a line*/}
             <div className="w-full h-[1px] bg-gray-400"></div>
+            {/* contents are displayed here by mapping the array */}
             <div className={`p-5 border border-b-0 border-gray-200 dark:border-gray-700 ${isOpen ? 'block' : 'hidden'}`}>
                 {content.map((topic, index) => (
                     <div className="flex gap-2 py-1 items-center">

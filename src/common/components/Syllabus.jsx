@@ -1,11 +1,13 @@
 import React from 'react';
 import Accordion from './Accordion';
 
+// setting the base url
 const BaseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-export default async function Syllabus () {
 
+export default async function Syllabus() {
 
-    const {ncert,maharashtra,punjab,foundations} = await getData();
+    // Fetching data from the server
+    const {ncert, maharashtra, punjab, foundations} = await getData();
 
     return (
         <div className="m-4 bg-gray-100 p-4">
@@ -29,25 +31,17 @@ export default async function Syllabus () {
     );
 }
 
-
+// Function to fetch data from the server
 async function getData() {
-    const res_ncert = await fetch(`${BaseUrl}/api/ncert`)
-    const res_maharashtra = await fetch(`${BaseUrl}/api/maharashtra`)
-    const res_punjab = await fetch(`${BaseUrl}/api/punjab`)
-    const res_foundations = await fetch(`${BaseUrl}/api/foundation`)
+    // Fetching data from all the endpoints and also caching the data for 1 hour
+    const res_ncert = await fetch(`${BaseUrl}/api/ncert`,{ next: { revalidate: 3600 } })
+    const res_maharashtra = await fetch(`${BaseUrl}/api/maharashtra`,{ next: { revalidate: 3600 } })
+    const res_punjab = await fetch(`${BaseUrl}/api/punjab`,{ next: { revalidate: 3600 } })
+    const res_foundations = await fetch(`${BaseUrl}/api/foundation`,{ next: { revalidate: 3600 } })
 
-    if (!res_ncert.ok) {
-
-        throw new Error('Failed to fetch ncert data')
-    }
-    if(!res_maharashtra.ok){
-        throw new Error('Failed to fetch maharashtra data')
-    }
-    if(!res_punjab.ok){
-        throw new Error('Failed to fetch punjab data')
-    }
-    if(!res_foundations.ok){
-        throw new Error('Failed to fetch foundations data')
+    // going through the responses and check for errors
+    if (!res_ncert.ok || !res_maharashtra.ok || !res_punjab.ok || !res_foundations.ok) {
+        throw new Error('Failed to fetch data')
     }
 
     const data_ncert = await res_ncert.json()
