@@ -30,6 +30,7 @@ export default async function Syllabus () {
 
 
 // async function getData() {
+
 //     const res_ncert = await fetch(`${BaseUrl}/api/ncert`)
 //     const res_maharashtra = await fetch(`${BaseUrl}/api/maharashtra`)
 //     const res_punjab = await fetch(`${BaseUrl}/api/punjab`)
